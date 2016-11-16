@@ -1,8 +1,6 @@
 #!/bin/bash
 
+file1=$1
+file2=$2
 
-
-for name in students_courses.txt; do
-ls -l | grep -e students.txt | awk {print '$2'} | cat;
-ls -l | grep -e courses.txt | awk {print '$2'} | cat;
-done
+join -j 2 -o 1.1,1.2,1.3,2.3 <(sort -k2 file1) <(sort -k2 file2) 
